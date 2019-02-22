@@ -17,5 +17,8 @@
   "license": "CC0-1.0",
   "devDependencies": {
     "electron": "^4.0.4"
+  },
+  "dependencies": {
+    "firebase": "^5.8.4"
   }
 }
