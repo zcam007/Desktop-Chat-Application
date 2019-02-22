@@ -1,4 +1,4 @@
-var firebase=require('./firebase.js');
+var firebase=require('./firebase/firebase.js');
 
  firebase.auth().onAuthStateChanged(function(user) {
     if (user) {

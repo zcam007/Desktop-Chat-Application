@@ -1,7 +1,7 @@
 // This file is required by the index.html file and will
 // be executed in the renderer process for that window.
 // All of the Node.js APIs are available in this process.
-var firebase=require('./firebase.js');
+var firebase=require('./firebase/firebase.js');
 
 var config = {
     apiKey: "AIzaSyBlcIAPTFi5W__pFxufWyLXLin-nwg4J6U",
@@ -12,6 +12,7 @@ var config = {
     messagingSenderId: "374510722132"
   };
   firebase.initializeApp(config);
+  //require('./firebase/firebaseInfo.js');
   require('./dashboard');        
 
  // var ele=document.getElementById('heading');
@@ -28,11 +29,11 @@ var config = {
       console.log("clicked");
     var emailField=document.getElementById('inputEmail').value;
     var passwordField=document.getElementById('inputPassword').value;
-    alert(emailField+" "+passwordField);
+   // alert(emailField+" "+passwordField);
     firebase.auth().signInWithEmailAndPassword(emailField,passwordField).then(function()
     {
        // alert("Signed In");
-       document.location.href="dashboard.html";
+       document.location.href="./pages/dashboard.html";
 }).catch(function(error)
 {
     alert("Wrong username/password");
