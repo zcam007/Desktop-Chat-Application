@@ -95,9 +95,11 @@ win.webContents.on('did-finish-load', ()=>{
       req.open("GET", "https://api.jsonbin.io/b/5c709a1f91e4475ca8475115/latest", true);
       //req.setRequestHeader("secret-key", "<SECRET_KEY>");
       req.send();
-
+      while (currentTime + 2000 >= new Date().getTime()) {
+    }
+   
       var xhr = new XMLHttpRequest();
-      console.log("code"+realCode);
+      console.log("realcode"+realCode);
   
   xhr.open("POST", "https://github.com/login/oauth/access_token", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
